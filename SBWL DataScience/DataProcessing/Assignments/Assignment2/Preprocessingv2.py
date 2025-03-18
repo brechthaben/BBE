@@ -141,11 +141,17 @@ def random_sample_data(data, sample_size=10000, seed=1):
 
 # Example usage
 if __name__ == "__main__":
+    # Get the current directory where this script is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
     # Replace with your API URL
     api_url = "https://data.lacity.org/resource/63jg-8b9z.json"
-    output_file = "api_data.json"
-    filtered_file = "filtered_data_2013_2019.json"
-    sampled_file = "sampled_data_10k.json"
+    
+    # Set output file paths in the current directory
+    output_file = os.path.join(current_dir, "api_data.json")
+    filtered_file = os.path.join(current_dir, "filtered_data_2013_2019.json")
+    sampled_file = os.path.join(current_dir, "sampled_data_10k.json")
+    final_output_file = os.path.join(current_dir, "final_processed_data.json")
     
     # Check if we already have the data file, if not fetch it
     if not os.path.exists(output_file):
@@ -172,3 +178,7 @@ if __name__ == "__main__":
             # Save sampled data
             if sampled_data:
                 save_to_json_file(sampled_data, sampled_file)
+                
+                # Create a copy of the final sampled data as the final output
+                save_to_json_file(sampled_data, final_output_file)
+                print(f"Final processed data saved to {final_output_file}")
