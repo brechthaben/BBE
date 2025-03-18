@@ -173,7 +173,7 @@ if __name__ == "__main__":
             save_to_json_file(filtered_data, filtered_file)
             
             # Sample 10,000 random entries with fixed seed
-            sampled_data = random_sample_data(filtered_data, sample_size=10000, seed=42)
+            sampled_data = random_sample_data(filtered_data, sample_size=10000, seed=1)
             
             # Save sampled data
             if sampled_data:
