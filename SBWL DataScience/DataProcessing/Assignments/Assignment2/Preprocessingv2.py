@@ -148,7 +148,7 @@ if __name__ == "__main__":
     api_url = "https://data.lacity.org/resource/63jg-8b9z.json"
     
     # Set output file paths in the current directory
-    output_file = os.path.join(current_dir, "api_data.json")
+    output_file = os.path.join(current_dir, "Data set 2.json")
     filtered_file = os.path.join(current_dir, "filtered_data_2013_2019.json")
     sampled_file = os.path.join(current_dir, "sampled_data_10k.json")
     final_output_file = os.path.join(current_dir, "final_processed_data.json")
